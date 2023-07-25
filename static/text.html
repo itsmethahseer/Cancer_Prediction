@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lung Cancer Prediction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Lung Cancer Prediction</h1>
+        <form id="predictionForm">
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender</label>
+                <input type="text" class="form-control" id="gender" name="gender" required>
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="text" class="form-control" id="age" name="age" required>
+            </div>
+            <div class="mb-3">
+                <label for="smoking" class="form-label">Smoking</label>
+                <input type="text" class="form-control" id="smoking" name="smoking" required>
+            </div>
+            <div class="mb-3">
+                <label for="yellowFingers" class="form-label">Yellow Fingers</label>
+                <input type="text" class="form-control" id="yellowFingers" name="yellowFingers" required>
+            </div>
+            <div class="mb-3">
+                <label for="anxiety" class="form-label">Anxiety</label>
+                <input type="text" class="form-control" id="anxiety" name="anxiety" required>
+            </div>
+            <div class="mb-3">
+                <label for="peerPressure" class="form-label">Peer Pressure</label>
+                <input type="text" class="form-control" id="peerPressure" name="peerPressure" required>
+            </div>
+            <div class="mb-3">
+                <label for="chronicDisease" class="form-label">Chronic Disease</label>
+                <input type="text" class="form-control" id="chronicDisease" name="chronicDisease" required>
+            </div>
+            <div class="mb-3">
+                <label for="fatigue" class="form-label">Fatigue</label>
+                <input type="text" class="form-control" id="fatigue" name="fatigue" required>
+            </div>
+            <div class="mb-3">
+                <label for="allergy" class="form-label">Allergy</label>
+                <input type="text" class="form-control" id="allergy" name="allergy" required>
+            </div>
+            <div class="mb-3">
+                <label for="wheezing" class="form-label">Wheezing</label>
+                <input type="text" class="form-control" id="wheezing" name="wheezing" required>
+            </div>
+            <div class="mb-3">
+                <label for="alcoholConsuming" class="form-label">Alcohol Consuming</label>
+                <input type="text" class="form-control" id="alcoholConsuming" name="alcoholConsuming" required>
+            </div>
+            <div class="mb-3">
+                <label for="coughing" class="form-label">Coughing</label>
+                <input type="text" class="form-control" id="coughing" name="coughing" required>
+            </div>
+            <div class="mb-3">
+                <label for="shortnessOfBreath" class="form-label">Shortness of Breath</label>
+                <input type="text" class="form-control" id="shortnessOfBreath" name="shortnessOfBreath" required>
+            </div>
+            <div class="mb-3">
+                <label for="swallowingDifficulty" class="form-label">Swallowing Difficulty</label>
+                <input type="text" class="form-control" id="swallowingDifficulty" name="swallowingDifficulty" required>
+            </div>
+            <div class="mb-3">
+                <label for="chestPain" class="form-label">Chest Pain</label>
+                <input type="text" class="form-control" id="chestPain" name="chestPain" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        <div id="result" class="mt-4"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#predictionForm').submit(function(event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost:8000/predict',
+                    data: formData,
+                    success: function(response) {
+                        var prediction = response.prediction;
+                        $('#result').text('Prediction: ' + prediction);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
