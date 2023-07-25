@@ -1,6 +1,6 @@
 # Lung Cancer Prediction Web Application
 
-This is a web application built with Django that allows users to predict the likelihood of lung cancer based on various input features. The application utilizes a machine learning model trained on a dataset of survey responses related to lung cancer.
+This is a web application built with FastApi that allows users to predict the likelihood of lung cancer based on various input features. The application utilizes a machine learning model trained on a dataset of survey responses related to lung cancer.
 
 ## Installation
 
