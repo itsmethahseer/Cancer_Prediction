@@ -14,7 +14,7 @@ This is a web application built with Django that allows users to predict the lik
 
 ## Usage
 
-1. Run the Django development server:
+1. Run the fastapi development server:
 
 
 2. Access the web application in your web browser at `http://localhost:8000/`.
@@ -25,12 +25,10 @@ This is a web application built with Django that allows users to predict the lik
 
 ## Project Structure
 
-- `lung_cancer_prediction_project`: The main Django project directory.
-- `lung_cancer_prediction_app`: The Django app containing the web application's views, templates, and URL configurations.
-  - `models.py`: Defines the data model for input data.
-  - `views.py`: Contains the prediction function and view handling logic.
+- `Cancer_Prediction`: The main FastApi project directory.
+
+  - `main.py`: Defines the fastapi main functions
   - `templates`: Directory containing the HTML templates for rendering the web pages.
-  - `urls.py`: Defines the URL patterns for the web application.
 - `cancer_model.pkl`: The trained machine learning model used for prediction.
 
 ## Data Preprocessing
