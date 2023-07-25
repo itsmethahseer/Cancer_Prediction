@@ -43,6 +43,3 @@ The machine learning model used for lung cancer prediction is a logistic regress
 
 The Lung Cancer Prediction web application was developed as part of a data science project. The dataset used for training the model was obtained from an open-source data repository.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
