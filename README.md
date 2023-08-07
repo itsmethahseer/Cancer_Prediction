@@ -1,5 +1,8 @@
 # Lung Cancer Prediction Web Application
 
+![Cancer Predictor web application]([image_url](https://github.com/itsmethahseer/Cancer_Prediction/blob/45befaf9c8a518f72677a56141436639d066fe45/Screenshot%202023-08-07%20211212.png
+))
+
 This is a web application built with FastApi that allows users to predict the likelihood of lung cancer based on various input features. The application utilizes a machine learning model trained on a dataset of survey responses related to lung cancer.
 
 ## Installation
